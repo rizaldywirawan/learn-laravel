@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TaskingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/tasking', [TaskingController::class, 'index']);
+Route::get('/tasking/create', [TaskingController::class, 'create']);
+Route::post('/tasking', [TaskingController::class, 'store']);
+
+
