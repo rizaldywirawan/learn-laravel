@@ -1,12 +1,12 @@
 {{--  --}}
 @extends('layout.master')
 
-<<<<<<< Updated upstream
+
   <div><a href="/tasking/create">Tambah Task</a></div>
-=======
+
 @section('content')
 <div><a href="{{url('/tasking/create')}}">Tambah Task</a></div>
->>>>>>> Stashed changes
+
 <table>
     <tr>
         <th>Tugas</th>
