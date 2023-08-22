@@ -14,13 +14,19 @@ use App\Http\Controllers\TaskingController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
 
+<<<<<<< Updated upstream
 Route::get('/tasking',[TaskingController::class, 'index']);
 Route::get('/tasking/create',[TaskingController::class,'create']);
 Route::post('/tasking',[TaskingController::class, 'store']);
 
+=======
+Route::get('/', [TaskingController::class, 'index']);
+Route::get('/tasking/create', [TaskingController::class, 'create']);
+Route::post('/tasking', [TaskingController::class, 'store']);
+>>>>>>> Stashed changes
 
 

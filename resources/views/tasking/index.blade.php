@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Latihan</title>
-</head>
-<body>
-  Tes tasking
+{{--  --}}
+@extends('layout.master')
 
+<<<<<<< Updated upstream
   <div><a href="/tasking/create">Tambah Task</a></div>
+=======
+@section('content')
+<div><a href="{{url('/tasking/create')}}">Tambah Task</a></div>
+>>>>>>> Stashed changes
 <table>
     <tr>
         <th>Tugas</th>
@@ -28,6 +25,11 @@
         @endforeach
     </tbody>
 </table>
+{{-- push template stack yg ada di master biasanya kita push js,mungkin library lainnya seperti swiper,dll --}}
+    @push('scripts')
+        <script>
+            console.log('hallo');
+        </script>
+    @endpush
 
-</body>
-</html>
+@endsection
