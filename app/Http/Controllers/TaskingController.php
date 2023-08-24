@@ -22,10 +22,15 @@ class TaskingController extends Controller
         $new_tasking->pic = $request->pic;
         $new_tasking->status = $request->status;
         $new_tasking->save() ;
-        return redirect('/tasking');
+        return redirect('/');
     }
 
 
+    public function search(request $request){
+        $search_tasking = $request ->word;
+        $file_taskings = Tasking::where('tugas','like',"%".$search_tasking."%");
+        return view('tasking.search');
+    }
 
 
 }
