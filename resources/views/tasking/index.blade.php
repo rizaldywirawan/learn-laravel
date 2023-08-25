@@ -1,9 +1,6 @@
-
 @extends('layout.master')
-
-
-
 @section('content')
+
 <div><a href="{{url('/tasking/create')}}">Tambah Task</a></div>
 <form action="{{url('/tasking/search')}}" method="get">
     @csrf

@@ -21,7 +21,6 @@
     <div><button type="submit">Simpan</button> </div>
 </form>
 
-
     @push('scripts')
         <script>
             console.log('test masuk create');
