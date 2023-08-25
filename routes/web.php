@@ -27,6 +27,6 @@ use App\Http\Controllers\TaskingController;
 Route::get('/', [TaskingController::class, 'index']);
 Route::get('/tasking/create', [TaskingController::class, 'create']);
 Route::post('/tasking', [TaskingController::class, 'store']);
-Route::get('/tasking/search', [TaskingController::class, 'search']);
+
 
 
