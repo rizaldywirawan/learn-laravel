@@ -1,12 +1,8 @@
 
 @extends('layout.master')
 @section('content')
-<div><a href="{{url('/tasking/create')}}">Tambah Task</a></div>
-<form action="{{url('/tasking/search')}}" method="get">
-    @csrf
-    <input type="text" name="word" placeholder="Cari Tugas">
-</form>
-
+<h1>Search Result</h1>
+<button type="submit"><a href="{{url('/')}}">Kembali</a></button>
 <table>
     <tr>
         <th>Tugas</th>
@@ -25,6 +21,8 @@
         @endforeach
     </tbody>
 </table>
+
+
 {{-- push template stack yg ada di master biasanya kita push js,mungkin library lainnya seperti swiper,dll --}}
     @push('scripts')
         <script>

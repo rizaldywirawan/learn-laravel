@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('table_tasking', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->string('tugas');
             $table->date('tanggal');
             $table->string('pic');

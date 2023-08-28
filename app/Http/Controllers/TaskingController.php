@@ -25,12 +25,19 @@ class TaskingController extends Controller
         return redirect('/');
     }
 
-
     public function search(request $request){
-        $search_tasking = $request ->word;
-        $file_taskings = Tasking::where('tugas','like',"%".$search_tasking."%");
-        return view('tasking.search');
+        $keyword = $request->search;
+        $list_tasking = Tasking::where('tugas', 'like', '%' . $keyword . '%')
+                            ->orWhere('pic', 'like', '%' . $keyword . '%')
+                            ->get();
+        return view('tasking.search',compact('list_tasking'));
     }
 
+    public function destroy($id){
+        $tasking = Tasking::find($id);
+        $tasking->delete();
+        return redirect('/');
+    }
 
 }
+

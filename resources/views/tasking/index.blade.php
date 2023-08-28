@@ -2,9 +2,9 @@
 @section('content')
 
 <div><a href="{{url('/tasking/create')}}">Tambah Task</a></div>
-<form action="{{url('/tasking/search')}}" method="get">
-    @csrf
-    <input type="text" name="word" placeholder="Cari Tugas">
+<form action="{{url('/search')}}" method="GET">
+    <input type="text" name="search" placeholder="Search ">
+    <button type="submit">Search</button>
 </form>
 
 <table>
@@ -21,6 +21,13 @@
             <td>{{$tasking->tanggal}}</td>
             <td>{{$tasking->pic}}</td>
             <td>{{$tasking->status}}</td>
+            <td>
+                <form action="{{url('/tasking/delete/{id}',$tasking->id)}}" method="post">
+                @csrf
+                @method('delete')
+                <button onclick="return confirm('yakin mau dihapus?')">Delete</button>
+                </td>
+            </form>
         </tr>
         @endforeach
     </tbody>
