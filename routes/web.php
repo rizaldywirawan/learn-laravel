@@ -31,5 +31,3 @@ Route::get('/search',[TaskingController::class, 'search']);
 Route::delete('/tasking/delete/{id}',[TaskingController::class, 'destroy']);
 Route::get('/tasking/edit/{id}',[TaskingController::class, 'edit']);
 Route::post('/tasking/update/{id}',[TaskingController::class, 'update']);
-
-
