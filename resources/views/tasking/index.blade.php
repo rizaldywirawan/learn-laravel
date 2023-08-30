@@ -22,7 +22,7 @@
             <td>{{$tasking->pic}}</td>
             <td>{{$tasking->status}}</td>
             <td>
-                <form action="{{url('/tasking/delete/{id}',$tasking->id)}}" method="post">
+                <form action="{{url('/tasking/delete',$tasking->id)}}" method="post">
                 @csrf
                 @method('delete')
                 <button onclick="return confirm('yakin mau dihapus?')">Delete</button>
