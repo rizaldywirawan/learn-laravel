@@ -22,8 +22,11 @@
             <td>{{$tasking->pic}}</td>
             <td>{{$tasking->status}}</td>
             <td>
+                <td>
                 <form action="{{url('/tasking/delete',$tasking->id)}}" method="post">
                 @csrf
+                @method('PATCH')
+                <button><a href="{{url('/tasking/edit',$tasking->id)}}">Edit</a></button>
                 @method('delete')
                 <button onclick="return confirm('yakin mau dihapus?')">Delete</button>
                 </td>

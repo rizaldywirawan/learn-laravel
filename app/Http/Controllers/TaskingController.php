@@ -39,4 +39,20 @@ class TaskingController extends Controller
         return redirect('/');
     }
 
+    public function edit($id){
+        $tasking = Tasking::find($id);
+        return view ('tasking.edit',compact('tasking'));
+    }
+
+    public function update(request $request, $id){
+        $tasking = Tasking::find($id);
+        $tasking->tugas = $request->tugas;
+        $tasking->tanggal = $request->tanggal;
+        $tasking->pic = $request->pic;
+        $tasking->status = $request->status;
+        $tasking->update();
+        return redirect('/');
+
+    }
+
 }
