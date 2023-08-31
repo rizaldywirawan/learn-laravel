@@ -8,7 +8,7 @@
     </div>
     <div>
         <span>Tanggal</span>
-        <input type="text" name="tanggal">
+        <input type="date" name="tanggal">
     </div>
     <div>
         <span>PIC</span>
