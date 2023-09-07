@@ -6,9 +6,15 @@ use App\Models\Tasking;
 
 class TaskingController extends Controller
 {
-    public function index(){
-        $list_tasking = Tasking::all();
-        return view ('tasking.index',compact('list_tasking'));
+      public function index(Request $request){
+        $keyword = $request->search;
+        $list_tasking = Tasking::when($keyword, function ($query) use ($keyword) {
+            return $query->where('tugas', 'like', '%' . $keyword . '%')
+                ->orWhere('pic', 'like', '%' . $keyword . '%');
+        })
+        ->get();
+
+        return view ('tasking.index', compact('list_tasking'));
     }
 
     public function create(){
@@ -25,15 +31,7 @@ class TaskingController extends Controller
         return redirect('/');
     }
 
-    // public function search(request $request){
-    //     $keyword = $request->search;
-    //     $list_tasking = Tasking::where('tugas', 'like', '%' . $keyword . '%')
-    //                         ->orWhere('pic', 'like', '%' . $keyword . '%')
-    //                         ->get();
-    //     return view('tasking.search',compact('list_tasking'));
-    // }
-
-    public function destroy($id){
+      public function destroy($id){
         $tasking = Tasking::find($id);
         $tasking->delete();
         return redirect('/');

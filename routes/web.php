@@ -29,7 +29,7 @@ use App\Http\Controllers\TaskSearchController;
 Route::get('/', [TaskingController::class, 'index']);
 Route::get('/tasking/create', [TaskingController::class, 'create']);
 Route::post('/tasking', [TaskingController::class, 'store']);
-Route::get('/search',[TaskSearchController::class, 'index']);
+// Route::get('/',[TaskSearchController::class, 'index']);
 Route::delete('/tasking/delete/{id}',[TaskingController::class, 'destroy']);
 Route::get('/tasking/edit/{id}',[TaskingController::class, 'edit']);
 Route::post('/tasking/update/{id}',[TaskingController::class, 'update']);

@@ -2,7 +2,7 @@
 @section('content')
 
 <div><a href="{{url('/tasking/create')}}">Tambah Task</a></div>
-<form action="{{url('/search')}}" method="GET">
+<form action="{{url('/')}}" method="GET">
     <input type="text" name="search" placeholder="Search ">
     <button type="submit">Search</button>
 </form>

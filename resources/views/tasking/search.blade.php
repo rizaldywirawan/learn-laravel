@@ -1,7 +1,11 @@
 
 @extends('layout.master')
 @section('content')
-<h1>Search Result</h1>
+
+<form action="{{url('/search')}}" method="GET">
+    <input type="text" name="search" placeholder="Search ">
+    <button type="submit">Search</button>
+</form>
 <button type="submit"><a href="{{url('/')}}">Kembali</a></button>
 <table>
     <tr>
