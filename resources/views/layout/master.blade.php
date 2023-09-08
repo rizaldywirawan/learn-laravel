@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
     @include('layout.head')
-<body>
+<body class="w-screen h-screen">
     {{-- untuk menyertakan suatu file dalam script,ini ditaruh di menjadi header --}}
+    <div class=" w-full h-full p-4">
     @include('layout.header')
-    <div class="container">
         {{-- yield untuk isi section pada webnya --}}
         @yield('content')
     </div>

@@ -2,23 +2,23 @@
 @section('content')
 <form method="post" action="{{url('/tasking')}}">
     @csrf
-    <div>
-        <span>Tugas</span>
+    <div class="mb-2">
+        <span class="text-base font-bold ">Tugas</span>
                <x-custom-input name="Tugas" placeholder="isi Tugas" />
 
     </div>
-    <div>
-        <span>Tanggal</span>
+    <div class="mb-2">
+        <span class="text-base font-bold ">Tanggal</span>
         <x-custom-input type="date" name="tanggal" placeholder="Tanggal Isi" />
 
     </div>
-    <div>
-        <span>PIC</span>
+    <div class="mb-2">
+        <span class="text-base font-bold ">PIC</span>
         <x-custom-input name="pic" placeholder="isi Nama Anda" />
 
     </div>
-    <div>
-        <span>Status</span>
+    <div class="mb-2">
+        <span class="text-base font-bold ">Status</span>
         <x-custom-input name="Tugas" placeholder="Isis Status Pengerjaan Anda" />
 
     </div>
