@@ -4,7 +4,7 @@
     @csrf
     <div class="mb-2">
         <span class="text-base font-bold ">Tugas</span>
-               <x-custom-input name="Tugas" placeholder="isi Tugas" />
+               <x-custom-input name="tugas" placeholder="isi Tugas" />
 
     </div>
     <div class="mb-2">
@@ -19,7 +19,7 @@
     </div>
     <div class="mb-2">
         <span class="text-base font-bold ">Status</span>
-        <x-custom-input name="Tugas" placeholder="Isis Status Pengerjaan Anda" />
+        <x-custom-input name="status" placeholder="Isis Status Pengerjaan Anda" />
 
     </div>
     <div> <x-button>Simpan</x-button> </div>

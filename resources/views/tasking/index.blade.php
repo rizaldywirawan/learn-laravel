@@ -23,7 +23,7 @@
                     @method('PATCH')
                     <x-button><a href="{{ url('/tasking/edit', $tasking->id) }}">Edit</a></x-button>
                     @method('delete')
-                    <x-button>Delete</x-button>
+                    <x-button onclick="return confirm('yakin mau hapus?')">Delete</x-button>
                 </form>
             </td>
         </tr>
