@@ -4,21 +4,25 @@
     @csrf
     <div>
         <span>Tugas</span>
-        <input type="text" name="tugas">
+               <x-custom-input name="Tugas" placeholder="isi Tugas" />
+
     </div>
     <div>
         <span>Tanggal</span>
-        <input type="date" name="tanggal">
+        <x-custom-input type="date" name="tanggal" placeholder="Tanggal Isi" />
+
     </div>
     <div>
         <span>PIC</span>
-        <input type="text" name="pic">
+        <x-custom-input name="pic" placeholder="isi Nama Anda" />
+
     </div>
     <div>
         <span>Status</span>
-        <input type="text" name="status">
+        <x-custom-input name="Tugas" placeholder="Isis Status Pengerjaan Anda" />
+
     </div>
-    <div><button type="submit">Simpan</button> </div>
+    <div> <x-button>Simpan</x-button> </div>
 </form>
 
     @push('scripts')
