@@ -1,40 +1,41 @@
 @extends('layout.master')
 @section('content')
 
-<div><a href="{{url('/tasking/create')}}">Tambah Task</a></div>
+<div>
+     <x-button><a href="{{url('/tasking/create')}}">Tambah Task</a></x-button>
+ </div>
 <form action="{{url('/')}}" method="GET">
-    <input type="text" name="search" placeholder="Search ">
-    <button type="submit">Search</button>
+    <x-custom-input name="search" placeholder="Search" />
+    <x-button>Search</x-button>
+
 </form>
 
-<table>
-    <tr>
-        <th>Tugas</th>
-        <th>Tanggal</th>
-        <th>PIC</th>
-        <th>Status</th>
-    </tr>
-    <tbody>
-        @foreach ($list_tasking as $tasking )
+<x-table>
+    @foreach ($list_tasking as $tasking)
         <tr>
-            <td>{{$tasking->tugas}}</td>
-            <td>{{$tasking->tanggal}}</td>
-            <td>{{$tasking->pic}}</td>
-            <td>{{$tasking->status}}</td>
+            <td>{{ $tasking->tugas }}</td>
+            <td>{{ $tasking->tanggal }}</td>
+            <td>{{ $tasking->pic }}</td>
+            <td>{{ $tasking->status }}</td>
             <td>
-                <td>
-                <form action="{{url('/tasking/delete',$tasking->id)}}" method="post">
-                @csrf
-                @method('PATCH')
-                <button><a href="{{url('/tasking/edit',$tasking->id)}}">Edit</a></button>
-                @method('delete')
-                <button onclick="return confirm('yakin mau dihapus?')">Delete</button>
-                </td>
-            </form>
+                <form action="{{ url('/tasking/delete', $tasking->id) }}" method="post">
+                    @csrf
+                    @method('PATCH')
+                    <x-button><a href="{{ url('/tasking/edit', $tasking->id) }}">Edit</a></x-button>
+                    @method('delete')
+                    <x-button onclick="return confirm('yakin mau hapus?')">Delete</x-button>
+                </form>
+            </td>
         </tr>
-        @endforeach
-    </tbody>
-</table>
+    @endforeach
+</x-table>
+
+
+
+{{-- <x-alert :type="success" :message="Berhasil"></x-alert>
+<x-alert :type="warning" :message="Periksa Lagi"></x-alert>
+<x-alert :type="error" :message="gagal Periksa Lagi"></x-alert> --}}
+
 {{-- push template stack yg ada di master biasanya kita push js,mungkin library lainnya seperti swiper,dll --}}
     @push('scripts')
         <script>
