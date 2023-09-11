@@ -28,7 +28,7 @@ class TaskingController extends Controller
         $new_tasking->pic = $request->pic;
         $new_tasking->status = $request->status;
         $new_tasking->save() ;
-        return redirect('/');
+        return redirect('/') ->with('toast_success', 'Data Tersimpan');
     }
 
       public function destroy($id){

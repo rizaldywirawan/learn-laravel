@@ -30,6 +30,8 @@
     @endforeach
 </x-table>
 
+
+
 {{-- <x-alert :type="success" :message="Berhasil"></x-alert>
 <x-alert :type="warning" :message="Periksa Lagi"></x-alert>
 <x-alert :type="error" :message="gagal Periksa Lagi"></x-alert> --}}
